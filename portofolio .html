@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website portofolio pribadi Suci Amelia">
+    <title>Portofolio | Suci Amelia</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* =========================
+           1. PENGATURAN DASAR
+        ========================= */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --bg: #0b1120;
+            --card: #151f35;
+            --card-light: #1c2944;
+            --text: #f8fafc;
+            --muted: #a6b2c8;
+            --border: rgba(255, 255, 255, 0.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        section {
+            padding: 100px 8% 70px;
+            scroll-margin-top: 65px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-description {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           2. NAVIGASI
+        ========================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 17, 32, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navbar a {
+            font-size: 0.9rem;
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           3. TENTANG SAYA
+        ========================= */
+        .about {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            gap: 55px;
+            padding-top: 130px;
+            background:
+                radial-gradient(circle at 85% 25%,
+                rgba(139, 92, 246, 0.15), transparent 30%);
+        }
+
+        .about-content {
+            flex: 1.2;
+        }
+
+        .greeting {
+            display: inline-block;
+            padding: 6px 15px;
+            margin-bottom: 15px;
+            color: #c4b5fd;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        .about-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .about-content h1 span {
+            color: var(--primary);
+        }
+
+        .about-content h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .about-content > p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .about-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+        }
+
+        .about-photo {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            width: 310px;
+            height: 370px;
+            padding: 10px;
+            background: linear-gradient(135deg,
+                var(--primary), #312e81);
+            border-radius: 35px 35px 100px 35px;
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.2);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 28px 28px 93px 28px;
+        }
+
+        /* =========================
+           4. IDENTITAS
+        ========================= */
+        .identity-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 35px;
+        }
+
+        .identity-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .identity-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .identity-item {
+            display: grid;
+            grid-template-columns: 105px 1fr;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .identity-item strong {
+            color: #c4b5fd;
+            font-weight: 500;
+        }
+
+        .identity-item span {
+            color: var(--muted);
+            overflow-wrap: anywhere;
+        }
+
+        .identity-description {
+            color: var(--muted);
+            border-left: 2px solid var(--primary);
+            padding-left: 20px;
+            align-self: center;
+        }
+
+        /* =========================
+           5. HOBI SAYA
+        ========================= */
+        .hobbies {
+            background: #0e172a;
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .hobby-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+        }
+
+        .hobby-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: var(--card-light);
+        }
+
+        .hobby-info {
+            padding: 20px;
+        }
+
+        .hobby-info h3 {
+            margin-bottom: 7px;
+        }
+
+        .hobby-info p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            color: #c4b5fd;
+            background: rgba(139, 92, 246, 0.13);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            padding: 5px 11px;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           6. KEAHLIAN
+        ========================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            color: #c4b5fd;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 13px;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .skill-bar {
+            height: 7px;
+            margin-top: 18px;
+            background: #293650;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg,
+                var(--primary), #c4b5fd);
+            border-radius: 10px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .skill-tags {
+            margin-top: 35px;
+        }
+
+        .skill-tags h3 {
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           7. KONTAK
+        ========================= */
+        .contact {
+            background: #0e172a;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border-radius: 12px;
+            font-size: 1.3rem;
+        }
+
+        .contact-item h3 {
+            font-size: 0.95rem;
+        }
+
+        .contact-item p {
+            color: var(--muted);
+            font-size: 0.82rem;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-form {
+            padding: 28px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: #0e172a;
+            border: 1px solid #34415b;
+            border-radius: 9px;
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        /* =========================
+           8. FOOTER
+        ========================= */
+        footer {
+            text-align: center;
+            padding: 25px 8%;
+            color: var(--muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer span {
+            color: var(--primary);
+        }
+
+        /* =========================
+           9. RESPONSIVE / HP
+        ========================= */
+        @media (max-width: 950px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            section {
+                padding: 85px 5% 55px;
+            }
+
+            .about {
+                gap: 30px;
+            }
+
+            .photo-frame {
+                width: 260px;
+                height: 320px;
+            }
+
+            .hobby-grid,
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .navbar {
+                gap: 17px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px 5%;
+                background: #0b1120;
+                border-bottom: 1px solid var(--border);
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .navbar.show {
+                display: flex;
+            }
+
+            .about {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .about-buttons {
+                justify-content: center;
+            }
+
+            .photo-frame {
+                width: 230px;
+                height: 275px;
+            }
+
+            .about-content h1 {
+                font-size: 2.7rem;
+            }
+
+            .identity-card,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .identity-description {
+                border-left: none;
+                border-top: 2px solid var(--primary);
+                padding: 18px 0 0;
+            }
+
+            .identity-item {
+                grid-template-columns: 90px 1fr;
+            }
+
+            .hobby-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hobby-card img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASI -->
+    <header>
+        <a href="#home" class="logo">
+            <i class="fa-solid fa-leaf"></i> Suci <span>Amelia.</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Buka menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#hobbies">Hobi</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- TENTANG SAYA -->
+    <section class="about" id="home">
+        <div class="about-content">
+            <span class="greeting">Halo, selamat datang!</span>
+
+            <h1>Suci <span>Amelia</span></h1>
+            <h3>Mahasiswa | Prodi Ilkom</h3>
+
+            <p>
+                Halo! Saya Suci Amelia. Saya senang belajar hal baru,
+                mencoba berbagai kegiatan, dan mengembangkan kemampuan
+                diri. Website ini adalah tempat untuk mengenal saya
+                lebih dekat.
+            </p>
+
+            <div class="about-buttons">
+                <a href="#about" class="btn">
+                    <i class="fa-solid fa-user"></i> Tentang Saya
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    Hubungi Saya
+                </a>
+            </div>
+        </div>
+
+        <div class="about-photo">
+            <div class="photo-frame">
+                <!-- Ganti ft.png dengan foto profilmu -->
+                <img src="ft.png" alt="Foto profil Suci Amelia">
+            </div>
+        </div>
+    </section>
+
+    <!-- IDENTITAS DIRI -->
+    <section id="about">
+        <h2 class="section-title">Tentang <span>Saya</span></h2>
+        <p class="section-description">
+            Sedikit informasi mengenai identitas dan diri saya.
+        </p>
+
+        <div class="identity-card">
+            <div>
+                <h3><i class="fa-solid fa-id-card"></i> Identitas Diri</h3>
+
+                <div class="identity-list">
+                    <div class="identity-item">
+                        <strong>Nama</strong>
+                        <span>Suci Amelia</span>
+                    </div>
+                    
+                    <div class="identity-list">
+                    <div class="identity-item">
+                        <strong>Nim</strong>
+                        <span>4262250018</span>
+                    </div>
+
+
+                    <div class="identity-item">
+                        <strong>Tempat, Tgl. Lahir</strong>
+                        <span>Sugiharjo, 09 Desember 2007</span>
+                    </div>
+
+                    <div class="identity-item">
+                        <strong>Alamat</strong>
+                        <span>Dusun II Sugiharjo</span>
+                    </div>
+                    <div class="identity-list">
+                    <div class="identity-item">
+                        <strong>Prodi</strong>
+                        <span>Ilmu Komputer</span>
+                    </div>
+                    <div class="identity-list">
+                    <div class="identity-item">
+                        <strong>kelas</strong>
+                        <span>PSIK 26B</span>
+                    </div>
+                    <div class="identity-item">
+                        <strong>Pendidikan</strong>
+                        <span>UNIVERSITAS NEGRI MEDAN</span>
+                    </div>
+
+                    <div class="identity-item">
+                        <strong>Status</strong>
+                        <span>Mahasiswa</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="identity-description">
+                <h3>Tentang Kepribadian Saya</h3>
+                <p>
+                    Saya adalah pribadi yang senang belajar, mencoba
+                    pengalaman baru, dan mengembangkan kemampuan diri.
+                    Saya percaya bahwa setiap proses memberikan
+                    pelajaran berharga untuk masa depan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOBI DAN GALERI FOTO -->
+    <section class="hobbies" id="hobbies">
+        <h2 class="section-title">Hobi <span>Saya</span></h2>
+        <p class="section-description">
+            Berbagai kegiatan yang saya sukai dan momen
+            yang ingin saya abadikan.
+        </p>
+
+        <div class="hobby-grid">
+
+            <!-- HOBI 1: GANTI FOTO DAN DESKRIPSI -->
+            <article class="hobby-card">
+                <img src="t2.jpg" alt="Kegiatan Tari"
+                     loading="lazy">
+                <div class="hobby-info">
+                    <h3><i class="fa-solid fa-camera"></i> Seni</h3>
+                    <p>Mengikuti Lomba Antar Kelas.</p>
+                    <div class="tags">
+                        <span class="tag">aktivitas</span>
+                        <span class="tag">Keaktifan</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HOBI 2 -->
+            <article class="hobby-card">
+                <img src="s1.jpg" alt="Kegiatan Porseni"
+                     loading="lazy">
+                <div class="hobby-info">
+                    <h3><i class="fa-solid fa-camera"></i> Seni</h3>
+                    <p>Mengikuti Porseni Untuk Menambah Pengalaman.</p>
+                    <div class="tags">
+                        <span class="tag">Aktivitas</span>
+                        <span class="tag">Pengalaman</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HOBI 3 -->
+            <article class="hobby-card">
+                <img src="h1.jpg" alt="Kegiatan jalan-jalan"
+                     loading="lazy">
+                <div class="hobby-info">
+                    <h3><i class="fa-solid fa-mountain-sun"></i> Traveling</h3>
+                    <p>Menjelajahi Tempat.</p>
+                    <div class="tags">
+                        <span class="tag">Jalan-jalan</span>
+                        <span class="tag">Kota</span>
+                    </div>
+                </div>
+            </article>
+            <!-- HOBI 4 -->
+            <article class="hobby-card">
+                <img src="m1.jpg" alt="Menyenangkan Diri"
+                     loading="lazy">
+                <div class="hobby-info">
+                    <h3><i class="fa-solid"></i> Happy</h3>
+                    <p>Kesenangan.</p>
+                    <div class="tags">
+                        <span class="tag">Makan</span>
+                        <span class="tag">Dimanapun</span>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- TAMBAHKAN KARTU HOBI BARU DI SINI -->
+
+        </div>
+    </section>
+
+    <!-- KEAHLIAN -->
+    <section id="skills">
+        <h2 class="section-title">Keahlian <span>Saya</span></h2>
+        <p class="section-description">
+            Kemampuan yang saya miliki dan terus saya kembangkan.
+        </p>
+
+        <div class="skills-grid">
+
+            <article class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <h3>HTML</h3>
+                <p>Membuat struktur halaman website.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%"></div>
+                </div>
+                <div class="skill-label">
+                    <span>HTML Dasar</span><span>50%</span>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <h3>CSS</h3>
+                <p>Mengatur tampilan dan desain website.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%"></div>
+                </div>
+                <div class="skill-label">
+                    <span>CSS Dasar</span><span>50%</span>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-file-word"></i>
+                </div>
+                <h3>Microsoft Office</h3>
+                <p>Mengolah dokumen dan presentasi.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%"></div>
+                </div>
+                <div class="skill-label">
+                    <span>Office</span><span>50%</span>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <h3>Kerja Sama Tim</h3>
+                <p>Mampu bekerja sama dalam kegiatan kelompok.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-label">
+                    <span>Kolaborasi</span><span>80%</span>
+                </div>
+            </article>
+            <article class="skill-card">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <h3> Mengikuti Kegiatan Kesenian</h3>
+                <p>Suka Mempelajari Tentang Seni.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-label">
+                    <span>Kolaborasi</span><span>90%</span>
+                </div>
+            </article>
+
+
+            <!-- TAMBAHKAN KARTU KEAHLIAN BARU DI SINI -->
+
+        </div>
+
+        <!-- TAG KEAHLIAN -->
+        <div class="skill-tags">
+            <h3><i class="fa-solid fa-tags"></i> Tag Keahlian</h3>
+
+            <div class="tags">
+                <span class="tag">Komunikasi</span>
+                <span class="tag">Kreativitas</span>
+                <span class="tag">Seni</span>
+                <span class="tag">Kerja Sama</span>
+                <span class="tag">Manajemen Waktu</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Microsoft Office</span>
+
+                <!-- Tambahkan tag baru di sini -->
+                <span class="tag">Keahlian Baru</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Hubungi <span>Saya</span></h2>
+        <p class="section-description">
+            Jangan ragu untuk menghubungi saya melalui kontak berikut.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-list">
+
+                <!-- GANTI NOMOR DENGAN NOMOR WHATSAPP KAMU -->
+                <a class="contact-item"
+                   href="https://wa.me/qr/AHF2EMT5DBEKG1"
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+62 895-2441-7549</p>
+                    </div>
+                </a>
+
+                <!-- GANTI TIKTOK -->
+                <a class="contact-item"
+                   href="https://www.tiktok.com/@suciameliasuci519?_r=1&_t=ZS-9A6zGZuk9e4">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Tiktok</h3>
+                        <p>suciameliasuci519</p>
+                    </div>
+                </a>
+
+                <!-- GANTI USERNAME INSTAGRAM -->
+                <a class="contact-item"
+                   href="https://www.instagram.com/cylia_a09?stkn=MXFkeXVlMzd6NmQ1OQ=="
+                   target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h3>Instagram</h3>
+                        <p>@cylia_a09</p>
+                    </div>
+                </a>
+
+
+            <!-- FORM PESAN MELALUI WHATSAPP -->
+<form id="contactForm" class="contact-form">
+    <h3>Kirim Pesan</h3>
+
+    <div class="form-group">
+        <input
+            type="text"
+            id="nama"
+            placeholder="Nama lengkap"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <input
+            type="email"
+            id="email"
+            placeholder="Alamat email"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <textarea
+            id="pesan"
+            placeholder="Tulis pesan kamu..."
+            required
+        ></textarea>
+    </div>
+
+    <button type="submit" class="btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        Kirim Pesan
+    </button>
+</form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            ; 2026 <span>Suci Amelia</span>.
+            Dibuat dengan HTML, CSS, dan JavaScript.
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Menu navigasi untuk perangkat HP
+        const menuToggle = document.getElementById("menuToggle");
+        const navbar = document.getElementById("navbar");
+
+        menuToggle.addEventListener("click", function () {
+            navbar.classList.toggle("show");
+
+            const isOpen = navbar.classList.contains("show");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        // Tutup menu setelah salah satu tautan diklik
+        document.querySelectorAll(".navbar a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navbar.classList.remove("show");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // Form pesan: buka WhatsApp dengan pesan otomatis
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    if (!form) {
+        console.error("Form kontak tidak ditemukan!");
+        return;
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+
+        if (!nama || !email || !pesan) {
+            alert("Mohon isi semua kolom terlebih dahulu.");
+            return;
+        }
+
+        const isiPesan =
+            "Halo Suci Amelia!%0A%0A" +
+            "Nama: " + encodeURIComponent(nama) + "%0A" +
+            "Email: " + encodeURIComponent(email) + "%0A" +
+            "Pesan: " + encodeURIComponent(pesan);
+
+        const nomorWhatsApp = "6289524417549";
+
+        const linkWhatsApp =
+            "https://wa.me/" + nomorWhatsApp +
+            "?text=" + isiPesan;
+
+        window.location.href = linkWhatsApp;
+    });
+});
+    </script>
+
+</body>
+</html>
